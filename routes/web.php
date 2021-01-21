@@ -16,3 +16,6 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+Route::resource('/post',\App\Http\Controllers\PostController::class);
+Route::get('contact',[ \App\Http\Controllers\PostController::class,'contact']);
+Route::get('contact/{id}/{name}/{pass}',[ \App\Http\Controllers\PostController::class,'contactPost']);
