@@ -15,6 +15,7 @@ class AddCulomnsDeleteAtPostTable extends Migration
     {
         Schema::table('post', function (Blueprint $table) {
             //
+            $table->softDeletes();
         });
     }
 
@@ -25,8 +26,6 @@ class AddCulomnsDeleteAtPostTable extends Migration
      */
     public function down()
     {
-        Schema::table('post', function (Blueprint $table) {
-            //
-        });
+        Schema::dropIfExists('post');
     }
 }

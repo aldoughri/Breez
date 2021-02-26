@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddCulomnsBodyOpstTable extends Migration
+class AddCulomnsBodyPostTable extends Migration
 {
     /**
      * Run the migrations.
@@ -14,7 +14,9 @@ class AddCulomnsBodyOpstTable extends Migration
     public function up()
     {
         Schema::table('post', function (Blueprint $table) {
+            $table->string('title');
             $table->text('body');
+
         });
     }
 
@@ -25,8 +27,13 @@ class AddCulomnsBodyOpstTable extends Migration
      */
     public function down()
     {
-        Schema::table('post', function (Blueprint $table) {
+        /*Schema::table('post', function (Blueprint $table) {
             //
-        });
+            $table->dropColumn('titlee');
+            $table->dropColumn('bodya');
+
+        });*/
+        Schema::dropIfExists('post');
     }
+
 }

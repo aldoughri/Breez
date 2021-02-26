@@ -19,3 +19,8 @@ Route::get('/', function () {
 Route::resource('/post',\App\Http\Controllers\PostController::class);
 Route::get('contact',[ \App\Http\Controllers\PostController::class,'contact']);
 Route::get('contact/{id}/{name}/{pass}',[ \App\Http\Controllers\PostController::class,'contactPost']);
+Route::get('contactfun',[ \App\Http\Controllers\PostController::class,'peopleContact']);
+Route::get('savepoat',[\App\Http\Controllers\PostController::class,'savePost']);
+Route::get('findpost',[\App\Http\Controllers\PostController::class,'findPost']);
+Route::get('deletepost',[\App\Http\Controllers\PostController::class,'deletePost']);
+
